@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center fondo" mode="ios">
+
+  <img src="../../assets/images/logo_blanco.png" class="logo">
+
+  <div class="title">
+    <h2>Bienvenido</h2>
+    <p>Ingresa usuario y contraseña</p>
+  </div><br>
+
+  <form>
+    <ion-input [(ngModel)]="usuario" name="usuario" required="true" clearInput="true" type="email" placeholder="Nombre de usuario" class="entrada ion-text-left"></ion-input><br>
+    <ion-input [(ngModel)]="contrasena" name="contrasena" required="true" clearInput="true" type="password" placeholder="Contraseña" class="entrada ion-text-left"></ion-input>
+  </form>
+
+  <ion-grid class="ion-padding-top">
+    <ion-row>
+
+      <ion-col>
+        <ion-button class="boton-circular" color="white" [routerLink]="['/registro-usuario/']">
+          <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
+        <p>Registrarse</p>
+      </ion-col>
+
+      <ion-col>
+        <ion-button class="boton-circular" color="white" (click)="SaveData()">
+          <ion-icon name="log-in-outline"></ion-icon>
+        </ion-button>
+        <p>Ingresar</p>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

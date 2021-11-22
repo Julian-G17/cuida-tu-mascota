@@ -1,0 +1,40 @@
+<ion-header>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-text-center fondo" mode="ios">
+
+  <img src="../../assets/images/letrero.png">
+
+  <div class="title">
+    <h2>Lista de mascotas</h2>
+  </div><br>
+
+  <ion-list lines="none" inset="true" mode="ios">
+
+    <ion-item lines="none" *ngFor="let mascota of mascotas" [routerLink]="['/perfil-mascota/' + mascota.id_mascota]">
+      <ion-avatar slot="start">
+        <img src="{{mascota.foto_mascota}}">
+      </ion-avatar>
+      <ion-label class="name ion-padding">{{mascota.nombre}}</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button class="boton-circular ion-text-center" color="white" [routerLink]="['/home/']">
+          <ion-icon name="log-out-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="boton-circular ion-text-center" color="white" [routerLink]="['/registro-mascota/']">
+          <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

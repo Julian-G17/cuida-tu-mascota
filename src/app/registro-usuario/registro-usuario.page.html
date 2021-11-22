@@ -1,0 +1,46 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+    <ion-buttons>
+      <ion-back-button text="Inicio" [routerLink]="['/home/']"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center fondo" mode="ios">
+
+  <ion-grid class="ion-padding-bottom">
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/logo_blanco.png" class="logo">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="title">
+    <h2>¿Quieres registrarte?</h2>
+    <p>Ingresa los datos</p>
+  </div><br>
+
+  <ion-input [(ngModel)]="nombre" name="nombre" required="true" clearInput="true" placeholder="Nombre completo" class="entrada ion-text-left"></ion-input><br>
+  <ion-input [(ngModel)]="usuario" name="usuario" required="true" clearInput="true" type="email" placeholder="Nombre de usuario" class="entrada ion-text-left"></ion-input><br>
+  <ion-input [(ngModel)]="contrasena" name="contrasena" required="true" clearInput="true" type="password" placeholder="Contraseña" class="entrada ion-text-left"></ion-input>
+
+  <ion-grid class="ion-padding-top">
+    <ion-row>
+
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button class="boton-circular" color="white" (click)="SaveData()" [routerLink]="['/home/']">
+          <ion-icon name="log-in-outline"></ion-icon>
+        </ion-button>
+        <p>Registrarse</p>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,32 @@
+.fondo{
+  --background: url("../../assets/images/fondo-pantalla.png") no-repeat 100% 100%;
+}
+
+.logo{
+  width: 60%;
+  margin: 10% 0 10% 0;
+}
+
+.entrada{
+  background: white;
+  --padding-start: 10px;
+  color: #4d4d4d;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+.boton-circular{
+  --border-radius: 100%;
+  width: 80px;
+  height: 80px;
+}
+
+p{
+  color: white;
+}
+
+h2{
+  font-weight: bold;
+  color: white;
+  font-weight: bold;
+}

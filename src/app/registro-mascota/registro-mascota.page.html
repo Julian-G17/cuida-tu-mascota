@@ -1,0 +1,47 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-title>Registro mascota</ion-title>
+    <ion-buttons>
+      <ion-back-button text="Volver" [routerLink]="['/lista-mascotas/']"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center fondo" mode="ios">
+
+  <ion-grid class="ion-padding-bottom">
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/logo_blanco.png" class="logo">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="title">
+    <h2>¿Registrando tu mascota?</h2>
+    <p>Ingresa sus datos</p>
+  </div><br>
+
+  <ion-input [(ngModel)]="nombre" name="nombre" required="true" clearInput="true" placeholder="Nombre" class="entrada ion-text-left"></ion-input><br>
+  <ion-input [(ngModel)]="edad" name="edad" required="true" clearInput="true" type="number" placeholder="Edad" class="entrada ion-text-left"></ion-input><br>
+  <ion-input [(ngModel)]="animal" name="animal" required="true" clearInput="true" placeholder="Animal" class="entrada ion-text-left"></ion-input><br>
+  <ion-input [(ngModel)]="raza" name="raza" required="true" clearInput="true" placeholder="Raza" class="entrada ion-text-left"></ion-input><br>
+
+  <ion-grid class="ion-padding-top">
+    <ion-row>
+
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button class="boton-circular" color="white" (click)="SaveData()" [routerLink]="['/lista-mascotas/']">
+          <ion-icon name="log-in-outline"></ion-icon>
+        </ion-button>
+        <p>Registrar</p>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

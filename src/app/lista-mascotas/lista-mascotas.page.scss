@@ -1,0 +1,37 @@
+.fondo{
+    --background: url("../../assets/images/fondo-pantalla.png") no-repeat 100% 100%;
+}
+
+h2{
+    font-weight: bold;
+    color: white;
+}
+
+ion-avatar{
+    width: 80px;
+    height: 80px;
+}
+
+ion-list{
+    background: none;
+}
+
+ion-item{
+    --background: none;
+}
+
+.name{
+    font-size: 17px;
+    font-weight: bold;
+}
+
+ion-label{
+    background: white;
+    border-radius: 80px;
+}
+
+.boton-circular{
+    --border-radius: 100%;
+    width: 80px;
+    height: 80px;
+}
