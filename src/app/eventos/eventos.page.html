@@ -1,0 +1,59 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" [routerLink]="['/perfil-mascota/' + idMascota]"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center fondo" mode="ios">
+
+  <div class="flex">
+    
+    <div class="left">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-left">
+            <ion-icon name="paw" color="primary"></ion-icon>
+            {{nombre}}
+            <ion-icon name="paw" color="primary"></ion-icon> 
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+
+    <div class="right ion-padding-top">
+      <ion-avatar slot="start">
+        <img src="{{foto}}">
+      </ion-avatar>
+    </div>
+
+  </div>
+
+  <ion-list lines="none" inset="true" mode="ios" class="ion-no-padding">
+    <!--[routerLink]="['/perfil-mascota/' + mascota.id_mascota]-->
+    <ion-item lines="none" *ngFor="let evento of eventos" class="ion-no-padding">
+      <ion-grid class="ion-text-center">
+        <ion-row>
+          <ion-col class="ion-no-padding">
+            <div class="colNombre ion-padding-top ion-padding-start">
+              {{evento.nombre}}
+            </div>
+          </ion-col>
+          <ion-col class="ion-text-center ion-no-padding">
+            <div class="datos ion-no-padding">
+              <div class="fecha ion-padding-top ion-padding-start">
+                {{evento.fecha}}
+              </div>
+              <div class="hora ion-padding-top ion-padding-start">
+                {{evento.hora}}
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

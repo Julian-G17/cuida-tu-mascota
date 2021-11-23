@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'registro-mascota',
     loadChildren: () => import('./registro-mascota/registro-mascota.module').then( m => m.RegistroMascotaPageModule)
   },
+  {
+    path: 'eventos/:id',
+    loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
+  },
 ];
 
 @NgModule({

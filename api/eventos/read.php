@@ -15,6 +15,8 @@ $db = $database->getConnection();
  
 // initialize object
 $eventos = new Eventos($db);
+$id_mascota_evento = $_GET["id_mascota"];
+$eventos->id_mascota = $id_mascota_evento;
  
 // read eventos will be here
 
@@ -36,12 +38,11 @@ if($num>0){
  
         $eventos_item=array(
             
-"id_eventos" => $id_eventos,
-"nombre" => $nombre,
-"descripción" => html_entity_decode($descripción),
-"fecha" => $fecha,
-"hora" => $hora,
-"id_mascota" => $id_mascota
+        "id_eventos" => $id_eventos,
+        "nombre" => $nombre,
+        "descripción" => html_entity_decode($descripción),
+        "fecha" => $fecha,
+        "hora" => $hora,
         );
  
         array_push($eventos_arr["records"], $eventos_item);
@@ -50,8 +51,8 @@ if($num>0){
     // set response code - 200 OK
     http_response_code(200);
  
-    // show eventos data in json format
-	echo json_encode(array("status" => "success", "code" => 1,"message"=> "eventos found","document"=> $eventos_arr));
+    // make it json format
+    echo json_encode(array($eventos_arr));
     
 }else{
  // no eventos found will be here

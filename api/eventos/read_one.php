@@ -38,8 +38,8 @@ if($eventos->id_eventos!=null){
     // set response code - 200 OK
     http_response_code(200);
  
-    // make it json format
-   echo json_encode(array("status" => "success", "code" => 1,"message"=> "eventos found","document"=> $eventos_arr));
+// make it json format
+echo json_encode(array($eventos_arr));
 }
  
 else{

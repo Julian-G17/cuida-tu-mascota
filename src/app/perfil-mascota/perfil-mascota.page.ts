@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class PerfilMascotaPage implements OnInit {
 
   idMascota: string;
+  id;
   nombre;
   edad;
   animal;
@@ -23,6 +24,7 @@ export class PerfilMascotaPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    const id_mascota = localStorage.getItem("Id");
 
     this.idMascota = this.activatedRoute.snapshot.paramMap.get('id')
     this.http.get('http://localhost/cuida-tu-mascota/api/mascota/read_one.php?id=' + this.idMascota)
@@ -37,5 +39,8 @@ export class PerfilMascotaPage implements OnInit {
     .subscribe(res => this.foto = res[0].foto_mascota)
       
   }
+
+
+
 }
 

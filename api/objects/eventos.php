@@ -28,7 +28,7 @@ public $id_mascota;
 		}
 		$offset = ($this->pageNo-1) * $this->no_of_records_per_page; 
 		// select all query
-		$query = "SELECT  t.* FROM ". $this->table_name ." t  LIMIT ".$offset." , ". $this->no_of_records_per_page."";
+		$query = "SELECT  t.* FROM ". $this->table_name ." t  WHERE id_mascota LIKE ". $this->id_mascota ." LIMIT ".$offset." , ". $this->no_of_records_per_page."";
 	 
 		// prepare query statement
 		$stmt = $this->conn->prepare($query);

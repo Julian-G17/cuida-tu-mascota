@@ -26,7 +26,6 @@
     </div>
 
   </div>
-  
 
   <ion-card>
     <ion-card-header>
@@ -36,5 +35,28 @@
       <ion-card-subtitle class="ion-text-left">{{animal}} - {{raza}} </ion-card-subtitle>
     </ion-card-header>
   </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button class="boton-circular ion-text-center" color="white" [routerLink]="['/eventos/' + idMascota]">
+          <ion-icon name="medkit"></ion-icon>
+        </ion-button>
+        <p>Eventos de salud</p>
+      </ion-col>
+      <ion-col>
+        <ion-button class="boton-circular ion-text-center" color="white">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+        <p>Borrar</p>
+      </ion-col>
+      <ion-col>
+        <ion-button class="boton-circular ion-text-center" color="white" [routerLink]="['/registro-mascota/']">
+          <ion-icon name="barbell-outline"></ion-icon>
+        </ion-button>
+        <p>Rutinas diarias</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
