@@ -10,7 +10,7 @@ class Eventos{
 	
 public $id_eventos;
 public $nombre;
-public $descripción;
+public $descripcion;
 public $fecha;
 public $hora;
 public $id_mascota;
@@ -43,7 +43,7 @@ public $id_mascota;
 	function create(){
 	 
 		// query to insert record
-		$query ="INSERT INTO ".$this->table_name." SET nombre=:nombre,descripción=:descripción,fecha=:fecha,hora=:hora,id_mascota=:id_mascota";
+		$query ="INSERT INTO ".$this->table_name." SET nombre=:nombre,descripcion=:descripcion,fecha=:fecha,hora=:hora,id_mascota=:id_mascota";
 
 		// prepare query
 		$stmt = $this->conn->prepare($query);
@@ -51,7 +51,7 @@ public $id_mascota;
 		// sanitize
 		
 $this->nombre=htmlspecialchars(strip_tags($this->nombre));
-$this->descripción=htmlspecialchars(strip_tags($this->descripción));
+$this->descripcion=htmlspecialchars(strip_tags($this->descripcion));
 $this->fecha=htmlspecialchars(strip_tags($this->fecha));
 $this->hora=htmlspecialchars(strip_tags($this->hora));
 $this->id_mascota=htmlspecialchars(strip_tags($this->id_mascota));
@@ -59,7 +59,7 @@ $this->id_mascota=htmlspecialchars(strip_tags($this->id_mascota));
 		// bind values
 		
 $stmt->bindParam(":nombre", $this->nombre);
-$stmt->bindParam(":descripción", $this->descripción);
+$stmt->bindParam(":descripcion", $this->descripcion);
 $stmt->bindParam(":fecha", $this->fecha);
 $stmt->bindParam(":hora", $this->hora);
 $stmt->bindParam(":id_mascota", $this->id_mascota);
@@ -95,7 +95,7 @@ $stmt->bindParam(":id_mascota", $this->id_mascota);
 		
 $this->id_eventos = $row['id_eventos'];
 $this->nombre = $row['nombre'];
-$this->descripción = $row['descripción'];
+$this->descripcion = $row['descripcion'];
 $this->fecha = $row['fecha'];
 $this->hora = $row['hora'];
 $this->id_mascota = $row['id_mascota'];
@@ -105,7 +105,7 @@ $this->id_mascota = $row['id_mascota'];
 	function update(){
 	 
 		// update query
-		$query ="UPDATE ".$this->table_name." SET nombre=:nombre,descripción=:descripción,fecha=:fecha,hora=:hora,id_mascota=:id_mascota WHERE id_eventos = :id_eventos";
+		$query ="UPDATE ".$this->table_name." SET nombre=:nombre,descripcion=:descripcion,fecha=:fecha,hora=:hora,id_mascota=:id_mascota WHERE id_eventos = :id_eventos";
 	 
 		// prepare query statement
 		$stmt = $this->conn->prepare($query);
@@ -113,7 +113,7 @@ $this->id_mascota = $row['id_mascota'];
 		// sanitize
 		
 $this->nombre=htmlspecialchars(strip_tags($this->nombre));
-$this->descripción=htmlspecialchars(strip_tags($this->descripción));
+$this->descripcion=htmlspecialchars(strip_tags($this->descripcion));
 $this->fecha=htmlspecialchars(strip_tags($this->fecha));
 $this->hora=htmlspecialchars(strip_tags($this->hora));
 $this->id_mascota=htmlspecialchars(strip_tags($this->id_mascota));
@@ -122,7 +122,7 @@ $this->id_eventos=htmlspecialchars(strip_tags($this->id_eventos));
 		// bind new values
 		
 $stmt->bindParam(":nombre", $this->nombre);
-$stmt->bindParam(":descripción", $this->descripción);
+$stmt->bindParam(":descripcion", $this->descripcion);
 $stmt->bindParam(":fecha", $this->fecha);
 $stmt->bindParam(":hora", $this->hora);
 $stmt->bindParam(":id_mascota", $this->id_mascota);

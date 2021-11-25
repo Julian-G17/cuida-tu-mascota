@@ -40,7 +40,7 @@ if($num>0){
             
         "id_eventos" => $id_eventos,
         "nombre" => $nombre,
-        "descripción" => html_entity_decode($descripción),
+        "descripcion" => html_entity_decode($descripcion),
         "fecha" => $fecha,
         "hora" => $hora,
         );

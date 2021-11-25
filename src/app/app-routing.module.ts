@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'eventos/:id',
     loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
   },
+  {
+    path: 'registro-eventos/:id',
+    loadChildren: () => import('./registro-eventos/registro-eventos.module').then( m => m.RegistroEventosPageModule)
+  },
+  {
+    path: 'info-eventos/:id',
+    loadChildren: () => import('./info-eventos/info-eventos.module').then( m => m.InfoEventosPageModule)
+  },
 ];
 
 @NgModule({

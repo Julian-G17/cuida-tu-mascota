@@ -29,7 +29,7 @@ if($eventos->id_eventos!=null){
         
 "id_eventos" => $eventos->id_eventos,
 "nombre" => $eventos->nombre,
-"descripción" => html_entity_decode($eventos->descripción),
+"descripcion" => html_entity_decode($eventos->descripcion),
 "fecha" => $eventos->fecha,
 "hora" => $eventos->hora,
 "id_mascota" => $eventos->id_mascota

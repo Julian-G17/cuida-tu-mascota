@@ -80,3 +80,10 @@ ion-item{
     font-weight: bold;
     border-radius: 10px;
 }
+
+
+.boton-circular{
+    --border-radius: 100%;
+    width: 80px;
+    height: 80px;
+}

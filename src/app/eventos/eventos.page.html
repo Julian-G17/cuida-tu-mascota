@@ -31,8 +31,7 @@
   </div>
 
   <ion-list lines="none" inset="true" mode="ios" class="ion-no-padding">
-    <!--[routerLink]="['/perfil-mascota/' + mascota.id_mascota]-->
-    <ion-item lines="none" *ngFor="let evento of eventos" class="ion-no-padding">
+    <ion-item lines="none" *ngFor="let evento of eventos" class="ion-no-padding" [routerLink]="['/info-eventos/' + evento.id_eventos]">
       <ion-grid class="ion-text-center">
         <ion-row>
           <ion-col class="ion-no-padding">
@@ -57,3 +56,17 @@
   </ion-list>
 
 </ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-button class="boton-circular ion-text-center" color="white" [routerLink]="['/registro-eventos/' + idMascota]">
+          <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

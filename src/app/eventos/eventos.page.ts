@@ -34,11 +34,5 @@ export class EventosPage implements OnInit {
       console.log(this.eventos);
     })
     
-    /*this.http.get('http://localhost/cuida-tu-mascota/api/eventos/read_one.php?id=' + this.idMascota)
-      .subscribe(res => this.nombreEvento = res[0].nombre) 
-    this.http.get('http://localhost/cuida-tu-mascota/api/eventos/read_one.php?id=' + this.idMascota)
-      .subscribe(res => this.fecha = res[0].fecha)
-    this.http.get('http://localhost/cuida-tu-mascota/api/eventos/read_one.php?id=' + this.idMascota)
-      .subscribe(res => this.hora = res[0].hora)*/
   }
 }

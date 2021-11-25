@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button text="Volver" [routerLink]="['/eventos/' + idMascota]"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center fondo" mode="ios">
+  <ion-grid class="ion-padding-bottom">
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <img src="../../assets/images/logo_blanco.png" class="logo">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="title">
+    <h2>¿Tu mascota tendrá un nuevo evento de salud?</h2>
+    <p>¡Crealo!</p>
+  </div><br>
+
+  <ion-input [(ngModel)]="nombre" name="nombre" required="true" clearInput="true" placeholder="Nombre" class="entrada ion-text-left"></ion-input><br>
+  <ion-input [(ngModel)]="descripcion" name="descripcion" required="true" clearInput="true" placeholder="Descripción" class="entrada ion-text-left"></ion-input><br>
+  <ion-input [(ngModel)]="fecha" name="fecha" required="true" clearInput="true" type="date" placeholder="Fecha" class="entrada ion-text-left"></ion-input><br>
+  <ion-input [(ngModel)]="hora" name="hora" required="true" clearInput="true" type="time" placeholder="Hora" class="entrada ion-text-left"></ion-input><br>
+
+  <ion-grid class="ion-padding-top">
+    <ion-row>
+
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button class="boton-circular" color="white" (click)="SaveData()" [routerLink]="['/lista-mascotas/']">
+          <ion-icon name="log-in-outline"></ion-icon>
+        </ion-button>
+        <p>Registrar</p>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

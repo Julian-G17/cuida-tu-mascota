@@ -23,7 +23,7 @@ $data = json_decode(file_get_contents("php://input"));
 // make sure data is not empty
 if(
 !empty($data->nombre)
-&&!empty($data->descripción)
+&&!empty($data->descripcion)
 &&!empty($data->fecha)
 &&!empty($data->hora)
 &&!empty($data->id_mascota)
@@ -32,7 +32,7 @@ if(
     // set eventos property values
 	 
 $eventos->nombre = $data->nombre;
-$eventos->descripción = $data->descripción;
+$eventos->descripcion = $data->descripcion;
 $eventos->fecha = $data->fecha;
 $eventos->hora = $data->hora;
 $eventos->id_mascota = $data->id_mascota;
