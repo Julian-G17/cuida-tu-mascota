@@ -3,16 +3,16 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-eventos',
-  templateUrl: './eventos.page.html',
-  styleUrls: ['./eventos.page.scss'],
+  selector: 'app-rutinas',
+  templateUrl: './rutinas.page.html',
+  styleUrls: ['./rutinas.page.scss'],
 })
-export class EventosPage implements OnInit {
+export class RutinasPage implements OnInit {
 
   idMascota: string;
   nombre;
   foto;
-  eventos = [];
+  rutinas = []; 
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,11 +27,12 @@ export class EventosPage implements OnInit {
     this.http.get('http://localhost/cuida-tu-mascota/api/mascota/read_one.php?id=' + this.idMascota)
       .subscribe(res => this.foto = res[0].foto_mascota)
 
-    this.http.get<any>( 'http://localhost/cuida-tu-mascota/api/eventos/read.php?id_mascota='+this.idMascota)
+    this.http.get<any>( 'http://localhost/cuida-tu-mascota/api/rutinas/read.php?id_mascota='+this.idMascota)
     .subscribe(res=> {
-      this.eventos = res[0].records;
-      console.log(this.eventos);
+      this.rutinas = res[0].records;
+      console.log(this.rutinas);
     })
-    
+
   }
+
 }

@@ -28,7 +28,7 @@ public $id_mascota;
 		}
 		$offset = ($this->pageNo-1) * $this->no_of_records_per_page; 
 		// select all query
-		$query = "SELECT  t.* FROM ". $this->table_name ." t  LIMIT ".$offset." , ". $this->no_of_records_per_page."";
+		$query = "SELECT  t.* FROM ". $this->table_name ." t  WHERE id_mascota LIKE ". $this->id_mascota ." LIMIT ".$offset." , ". $this->no_of_records_per_page."";
 	 
 		// prepare query statement
 		$stmt = $this->conn->prepare($query);
@@ -93,12 +93,12 @@ $stmt->bindParam(":id_mascota", $this->id_mascota);
 	 
 		// set values to object properties
 		
-$this->id_rutina = $row['id_rutina'];
-$this->nombre = $row['nombre'];
-$this->descripcion = $row['descripcion'];
-$this->fecha = $row['fecha'];
-$this->hora = $row['hora'];
-$this->id_mascota = $row['id_mascota'];
+		$this->id_rutina = $row['id_rutina'];
+		$this->nombre = $row['nombre'];
+		$this->descripcion = $row['descripcion'];
+		$this->fecha = $row['fecha'];
+		$this->hora = $row['hora'];
+		$this->id_mascota = $row['id_mascota'];
 	}
 	
 	// update the rutinas

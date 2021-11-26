@@ -39,7 +39,7 @@ if($rutinas->id_rutina!=null){
     http_response_code(200);
  
     // make it json format
-   echo json_encode(array("status" => "success", "code" => 1,"message"=> "rutinas found","document"=> $rutinas_arr));
+    echo json_encode(array($rutinas_arr));
 }
  
 else{

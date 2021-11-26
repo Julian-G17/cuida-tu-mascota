@@ -34,8 +34,26 @@ export class ApiService {
     return this.http.post(url, dataToSend, { headers });
   }
 
+  SaveDataRegistroRutina(dataToSend){
+    var url = "http://localhost/cuida-tu-mascota/api/rutinas/create.php";
+    const headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*' , 'Access-Control-Allow-Methods': '*', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'} );
+    return this.http.post(url, dataToSend, { headers });
+  }
+
   DeleteEvento(id){
-    var url = "http://localhost/cuida-tu-mascota/api/eventos/delete.php?id_eventos="+id;
+    var url = "http://localhost/cuida-tu-mascota/api/eventos/delete.php";
+    const headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*' , 'Access-Control-Allow-Methods': '*', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'} );
+    return this.http.post(url, id, { headers });
+  }
+
+  DeleteRutina(id){
+    var url = "http://localhost/cuida-tu-mascota/api/rutinas/delete.php";
+    const headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*' , 'Access-Control-Allow-Methods': '*', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'} );
+    return this.http.post(url, id, { headers });
+  }
+
+  DeleteMascota(id){
+    var url = "http://localhost/cuida-tu-mascota/api/mascota/delete.php";
     const headers = new HttpHeaders({ 'Access-Control-Allow-Origin': '*' , 'Access-Control-Allow-Methods': '*', 'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'} );
     return this.http.post(url, id, { headers });
   }

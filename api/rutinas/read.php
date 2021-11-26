@@ -15,6 +15,8 @@ $db = $database->getConnection();
  
 // initialize object
 $rutinas = new Rutinas($db);
+$id_mascota_rutina = $_GET["id_mascota"];
+$rutinas->id_mascota = $id_mascota_rutina;
  
 // read rutinas will be here
 
@@ -36,12 +38,11 @@ if($num>0){
  
         $rutinas_item=array(
             
-"id_rutina" => $id_rutina,
-"nombre" => $nombre,
-"descripcion" => html_entity_decode($descripcion),
-"fecha" => $fecha,
-"hora" => $hora,
-"id_mascota" => $id_mascota
+        "id_rutina" => $id_rutina,
+        "nombre" => $nombre,
+        "descripcion" => html_entity_decode($descripcion),
+        "fecha" => $fecha,
+        "hora" => $hora,
         );
  
         array_push($rutinas_arr["records"], $rutinas_item);
@@ -51,7 +52,7 @@ if($num>0){
     http_response_code(200);
  
     // show rutinas data in json format
-	echo json_encode(array("status" => "success", "code" => 1,"message"=> "rutinas found","document"=> $rutinas_arr));
+	echo json_encode(array($rutinas_arr));
     
 }else{
  // no rutinas found will be here

@@ -39,6 +39,18 @@ const routes: Routes = [
     path: 'info-eventos/:id',
     loadChildren: () => import('./info-eventos/info-eventos.module').then( m => m.InfoEventosPageModule)
   },
+  {
+    path: 'rutinas/:id',
+    loadChildren: () => import('./rutinas/rutinas.module').then( m => m.RutinasPageModule)
+  },
+  {
+    path: 'registro-rutinas/:id',
+    loadChildren: () => import('./registro-rutinas/registro-rutinas.module').then( m => m.RegistroRutinasPageModule)
+  },
+  {
+    path: 'info-rutinas/:id',
+    loadChildren: () => import('./info-rutinas/info-rutinas.module').then( m => m.InfoRutinasPageModule)
+  },
 ];
 
 @NgModule({

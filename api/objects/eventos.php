@@ -93,12 +93,12 @@ $stmt->bindParam(":id_mascota", $this->id_mascota);
 	 
 		// set values to object properties
 		
-$this->id_eventos = $row['id_eventos'];
-$this->nombre = $row['nombre'];
-$this->descripcion = $row['descripcion'];
-$this->fecha = $row['fecha'];
-$this->hora = $row['hora'];
-$this->id_mascota = $row['id_mascota'];
+		$this->id_eventos = $row['id_eventos'];
+		$this->nombre = $row['nombre'];
+		$this->descripcion = $row['descripcion'];
+		$this->fecha = $row['fecha'];
+		$this->hora = $row['hora'];
+		$this->id_mascota = $row['id_mascota'];
 	}
 	
 	// update the eventos

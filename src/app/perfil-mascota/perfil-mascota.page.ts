@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
+import { AlertController } from '@ionic/angular';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-perfil-mascota',
@@ -17,10 +20,14 @@ export class PerfilMascotaPage implements OnInit {
   animal;
   raza;
   foto;
+  id_usuario;
 
   constructor(
+    private http: HttpClient,
     private activatedRoute: ActivatedRoute,
-    private http: HttpClient
+    public userService:ApiService,
+    public alertController : AlertController,
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -37,9 +44,28 @@ export class PerfilMascotaPage implements OnInit {
       .subscribe(res => this.raza = res[0].raza)
     this.http.get('http://localhost/cuida-tu-mascota/api/mascota/read_one.php?id=' + this.idMascota)
     .subscribe(res => this.foto = res[0].foto_mascota)
+    this.http.get('http://localhost/cuida-tu-mascota/api/mascota/read_one.php?id=' + this.idMascota)
+    .subscribe(res => this.id = res[0].id_mascota)
+    this.http.get('http://localhost/cuida-tu-mascota/api/mascota/read_one.php?id=' + this.idMascota)
+    .subscribe(res => this.id_usuario = res[0].id_usuario)
       
   }
 
+  async alertaCorrecta(message) {
+    const alert = await this.alertController.create({
+      header: 'Completado',
+      message: message,
+      buttons: ['Volver']
+
+    });
+    await alert.present();
+  }
+
+  delete(){
+    this.userService.DeleteMascota({id_mascota : this.id})
+      .subscribe(res => console.log(res), error => console.error(error));
+    this.alertaCorrecta("Mascota eliminada correctamente");
+  }
 
 
 }

@@ -6,14 +6,14 @@ import { AlertController } from '@ionic/angular';
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-info-eventos',
-  templateUrl: './info-eventos.page.html',
-  styleUrls: ['./info-eventos.page.scss'],
+  selector: 'app-info-rutinas',
+  templateUrl: './info-rutinas.page.html',
+  styleUrls: ['./info-rutinas.page.scss'],
 })
-export class InfoEventosPage implements OnInit {
+export class InfoRutinasPage implements OnInit {
 
-  idEvento: string;
-  id_eventos;
+  idRutina: string;
+  id_rutina;
   nombre;
   descripcion;
   fecha;
@@ -29,21 +29,20 @@ export class InfoEventosPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.idRutina = this.activatedRoute.snapshot.paramMap.get('id')
+    console.log(this.idRutina);
 
-    this.idEvento = this.activatedRoute.snapshot.paramMap.get('id')
-    console.log(this.idEvento);
-
-    this.http.get('http://localhost/cuida-tu-mascota/api/eventos/read_one.php?id=' + this.idEvento)
-      .subscribe(res => this.id_eventos = res[0].id_eventos)
-    this.http.get('http://localhost/cuida-tu-mascota/api/eventos/read_one.php?id=' + this.idEvento)
+    this.http.get('http://localhost/cuida-tu-mascota/api/rutinas/read_one.php?id=' + this.idRutina)
+      .subscribe(res => this.id_rutina = res[0].id_rutina)
+    this.http.get('http://localhost/cuida-tu-mascota/api/rutinas/read_one.php?id=' + this.idRutina)
       .subscribe(res => this.nombre = res[0].nombre)
-    this.http.get('http://localhost/cuida-tu-mascota/api/eventos/read_one.php?id=' + this.idEvento)
+    this.http.get('http://localhost/cuida-tu-mascota/api/rutinas/read_one.php?id=' + this.idRutina)
       .subscribe(res => this.descripcion = res[0].descripcion)
-    this.http.get('http://localhost/cuida-tu-mascota/api/eventos/read_one.php?id=' + this.idEvento)
+    this.http.get('http://localhost/cuida-tu-mascota/api/rutinas/read_one.php?id=' + this.idRutina)
       .subscribe(res => this.fecha = res[0].fecha)
-    this.http.get('http://localhost/cuida-tu-mascota/api/eventos/read_one.php?id=' + this.idEvento)
+    this.http.get('http://localhost/cuida-tu-mascota/api/rutinas/read_one.php?id=' + this.idRutina)
       .subscribe(res => this.hora = res[0].hora)
-    this.http.get('http://localhost/cuida-tu-mascota/api/eventos/read_one.php?id=' + this.idEvento)
+    this.http.get('http://localhost/cuida-tu-mascota/api/rutinas/read_one.php?id=' + this.idRutina)
       .subscribe(res => this.id_mascota = res[0].id_mascota)
   }
 
@@ -55,13 +54,12 @@ export class InfoEventosPage implements OnInit {
 
     });
     await alert.present();
-    
   }
   
   delete(){
-    this.userService.DeleteEvento({id_eventos : this.id_eventos})
+    this.userService.DeleteRutina({id_rutina : this.id_rutina})
       .subscribe(res => console.log(res), error => console.error(error));
-    this.alertaCorrecta("Evento eliminado correctamente");
+    this.alertaCorrecta("Rutina eliminada correctamente");
   }
 
 }

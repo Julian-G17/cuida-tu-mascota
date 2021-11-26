@@ -1,0 +1,89 @@
+.fondo{
+    --background: url("../../assets/images/fondo-pantalla.png") no-repeat 100% 100%;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
+
+.right{
+    display: flex;
+    flex-direction: col;
+    width: 30%;
+}
+
+.nombre{
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+}
+
+.fecha{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 32px;
+    background: #2d807b;
+    padding-top: 6px;
+    border-radius: 10px;
+    color:white;
+    font-weight: bold;
+}
+
+.hora{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 32px;
+    background: #8ee7e2;
+    padding-top: 6px;
+    border-radius: 10px;
+    color: #2d807b;
+    font-weight: bold;
+}
+
+ion-avatar{
+    width: 90px;
+    height: 90px;
+}
+
+ion-list{
+    background: none;
+}
+
+ion-item{
+    height: 70px;
+    --background: none;
+}
+
+.colNombre{
+    display: flex;
+    flex-direction: row;
+    height: 65px;
+    width: 100%;
+    background-color: white;
+    padding-top:21px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+
+.boton-circular{
+    --border-radius: 100%;
+    width: 80px;
+    height: 80px;
+}

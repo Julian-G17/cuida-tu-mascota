@@ -45,13 +45,13 @@
         <p>Eventos de salud</p>
       </ion-col>
       <ion-col>
-        <ion-button class="boton-circular ion-text-center" color="white">
+        <ion-button class="boton-circular ion-text-center" (click)="delete()" color="white" [routerLink]="['/lista-mascotas/']">
           <ion-icon name="trash"></ion-icon>
         </ion-button>
         <p>Borrar</p>
       </ion-col>
       <ion-col>
-        <ion-button class="boton-circular ion-text-center" color="white" [routerLink]="['/registro-mascota/']">
+        <ion-button class="boton-circular ion-text-center" color="white" [routerLink]="['/rutinas/' + idMascota]">
           <ion-icon name="barbell-outline"></ion-icon>
         </ion-button>
         <p>Rutinas diarias</p>
